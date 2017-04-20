@@ -1,3 +1,4 @@
-class HomepageController < ApplicationContoroller
-
+class HomepageController < ApplicationController
+  def index
+  end
 end
