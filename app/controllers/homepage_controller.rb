@@ -1,0 +1,3 @@
+class HomepageController < ApplicationContoroller
+
+end
