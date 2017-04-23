@@ -7,6 +7,7 @@ end
 
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.2'
+gem 'devise'
 gem 'haml'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
