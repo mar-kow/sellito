@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    return unless params[:user_id] == current_user.id.to_s
+    return unless post_params[:user_id] == current_user.id.to_s
     @post = Post.new(post_params)
     if @post.save
       flash[:notice] = 'Post created!'
