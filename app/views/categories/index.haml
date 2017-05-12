@@ -1,4 +1,6 @@
-= link_to "Add category", new_category_path
+= button_to "Add category", new_category_path, method: :get
+
+%h4 Categories
 
 - @categories.each do |category|
   %p
