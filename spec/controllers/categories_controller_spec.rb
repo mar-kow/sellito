@@ -1,17 +1,17 @@
 #Ładujemy rails helper w każdym spec
 require 'rails_helper'
 
-#Określamy co testujemy - klase CategoriesController, w bloku do - end
+# Określamy, co testujemy: klase CategoriesController, w bloku do/end
 describe CategoriesController do
-  #testujemy metode index, używamy # bo to metoda instancji (. dla klasowych)
+  # Testujemy metodę index, używamy # bo to metoda instancji (. dla klasowych)
   describe '#index' do
-    it 'returns 200' do   #wykonujmey konkretny egzemplarz, każdy it to . w testach
-      get :index #wchodzimy na akcje index
-      expect(response.status).to be 200 #spodziewamy się, że status odpowiedzi będzie wynosił 200
+    it 'returns 200' do   # Wykonujemy konkretny egzemplarz, każdy it to . w testach
+      get :index # Wchodzimy na akcje index
+      expect(response.status).to be 200 # Spodziewamy się, że status odpowiedzi będzie wynosił 200
     end
   end
 
- #testujemy metode insancji new -jw
+ # Testujemy metode instancji new -jw
   describe '#new' do
     it 'returns 200' do
       get :new
