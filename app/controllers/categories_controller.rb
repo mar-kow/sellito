@@ -10,11 +10,12 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
-    if @category.save
+    if @category.valid?
+      @category.save
       flash[:notice] = 'Category created!'
       redirect_to @category
     else
-      flash[:alert] = 'Could not create a category.'
+      flash[:errors] = @category.errors.full_messages
       redirect_back(fallback_location: root_path)
     end
   end
