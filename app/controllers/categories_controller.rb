@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :fetch_category, only: [:show, :edit, :update, :destroy]
+  before_action :fetch_category, only: %i[show edit update destroy]
   def index
     @categories = Category.all
   end
