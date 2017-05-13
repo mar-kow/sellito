@@ -10,5 +10,4 @@ class Post < ApplicationRecord
     errors.add(:expiration_date, "Can't be in the past")
     end
   end
-
 end
