@@ -1,15 +1,24 @@
 %nav.navbar.navbar-default
-  .container-fluid
+  .container
     .navbar-header
       .navbar-brand
-      = link_to image_tag("logo.png", size: "43x50", :style => "margin: 10px"), root_path
-    %ul.nav.navbar-nav.pull-right
-      %li
-        = link_to 'Home', root_path
-      %li
-        = link_to 'About', about_path
-      %li
-        = link_to 'Cookies', cookies_path
-      = admin_categories_link
-      %li
-        = login_or_logout_user_link
+      = link_to image_tag("logo.png", size: "43x50", style: "margin: 10px"), root_path
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav.pull-right
+        %li
+          = link_to 'Home', root_path
+        %li
+          = link_to 'About', about_path
+        %li
+          = link_to "Cookies", cookies_path
+        %li
+          - if current_user
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle": "dropdown", type: "button"}
+                Menu
+                %span.caret
+                %ul.dropdown-menu
+                  %li= link_to "Posts", posts_path
+                  = admin_categories_link
+        %li
+          = login_or_logout_user_link
