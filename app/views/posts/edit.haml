@@ -4,3 +4,5 @@
   = link_to "Delete", @post, method: :delete, data: { confirm: "Are you sure?" }
 
   = render 'form'
+
+  = button_to "Delete post", @post, method: :delete
