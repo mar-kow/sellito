@@ -1,0 +1,8 @@
+= button_to "Add post", new_post_path, method: :get, class: 'btn btn-xs pull-right'
+
+%h4 My posts
+
+- @posts.each do |post|
+  %p
+    = link_to post.title, post
+    = link_to 'Edit', edit_post_path(post)
