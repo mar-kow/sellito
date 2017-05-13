@@ -6,8 +6,8 @@ class Post < ApplicationRecord
   validate :expiration_date_cannot_be_in_the_past
 
   def expiration_date_cannot_be_in_the_past
-    if expiration_date < Date.today
-    errors.add(:expiration_date, "Can't be in the past")
+    if expiration_date && expiration_date < Date.today
+      errors.add(:expiration_date, "Can't be in the past")
     end
   end
 end
