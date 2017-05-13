@@ -1,0 +1,10 @@
+- flash.each do |name, msg|
+  - if msg.is_a?(String)
+    %div{class: "alert alert-success"}
+      %button.close{"aria-hidden": "true", "data-dismiss": "alert", type: "button"} &times;
+      = content_tag :div, msg, id: "flash_success"
+  - else
+    %div{class: "alert alert-danger"}
+      %button.close{"aria-hidden": "true", "data-dismiss": "alert", type: "button"} &times;
+      - msg.each do |error|
+        = content_tag :div, error, id: "flash_errors"
