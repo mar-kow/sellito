@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :fetch_post, only: %i[show edit update destroy]
+  before_action :fetch_post, only: %i(show edit update destroy)
   def index
     @posts = Post.all.reverse
   end
@@ -55,6 +55,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-     params.require(:post).permit(:title, :description, :expiration_date, :user_id)
+    params.require(:post).permit(:title, :description, :expiration_date, :user_id)
   end
 end

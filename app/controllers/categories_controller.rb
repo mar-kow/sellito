@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :fetch_category, only: %i[show edit update destroy]
+  before_action :fetch_category, only: %i(show edit update destroy)
   def index
     @categories = Category.all
   end
@@ -23,9 +23,9 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-   @category.destroy
-   flash[:notice] = "Category #{category.name} deleted"
-   redirect_to categories_path
+    @category.destroy
+    flash[:notice] = "Category #{category.name} deleted"
+    redirect_to categories_path
   end
 
   private
