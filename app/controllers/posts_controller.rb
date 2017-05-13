@@ -4,6 +4,10 @@ class PostsController < ApplicationController
     @posts = Post.all.reverse
   end
 
+  def user_posts
+    @posts = current_user.posts
+  end
+
   def new
     @post = Post.new
   end
