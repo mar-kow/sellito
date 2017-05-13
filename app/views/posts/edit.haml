@@ -1,0 +1,6 @@
+%h2
+  Edit post:
+  = @post.title
+  = link_to "Delete", @post, method: :delete, data: { confirm: "Are you sure?" }
+
+  = render 'form'
