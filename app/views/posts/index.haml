@@ -5,3 +5,6 @@
 - @posts.each do |post|
   %p
     = link_to post.title, post
+    = link_to 'Edit', edit_post_path(post) if post_owner(post)
+
+
