@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  before_action :fetch_post, only: [:show, :edit, :update, :destroy]
+  before_action :fetch_post, only: %i[show edit update destroy]
   def index
-    @posts = current_user.posts.reverse
+    @posts = Post.all.reverse
   end
 
   def new
