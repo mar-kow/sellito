@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   def create
     return unless params_have_valid_user_id
     @post = Post.new(post_params)
-    @post.valid? ? create_post : handle_post_falidation_failed
+    @post.valid? ? create_post : handle_post_validation_failed
   end
 
   def show;  end
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
     post_params[:user_id] == current_user.id.to_s
   end
 
-  def handle_post_falidation_failed
+  def handle_post_validation_failed
     flash[:errors] = @post.errors.full_messages
     redirect_back(fallback_location: root_path)
   end
