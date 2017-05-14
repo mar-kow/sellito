@@ -13,4 +13,6 @@
       %br
       - slice.each do |post|
         = link_to post.title, post
-
+        Categories:
+        - post.categories.each do |category|
+          = category.name
