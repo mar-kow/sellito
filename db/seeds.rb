@@ -6,4 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(email:'test2@test.pl', password:'password')
+User.create(email:'admin2@sellito.pl', password:'password', is_admin?: true)
+User.create(email: 'test@test.pl', password: 'password', is_admin?: false)
+
+categories = %w(home fashion garden beauty kids edu food moto it health hobby sport pets music sex other)
+
+categories.each { |category| Catgory.create(name: category) }
