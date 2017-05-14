@@ -1,6 +1,9 @@
 class Post < ApplicationRecord
   # TODO: handle uploading photos
   belongs_to :user
+  has_many :post_categories
+  has_many :categories, through: :post_categories
+
   validates :title, :expiration_date, presence: true
 
   validate :expiration_date_cannot_be_in_the_past
