@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  # TODO: authorization with Pundit gem
+
   before_action :fetch_category, only: %i(show edit update destroy)
   def index
     @categories = Category.all
