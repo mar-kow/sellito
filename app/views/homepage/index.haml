@@ -9,7 +9,7 @@
       = link_to category.name.capitalize, category
 
   .row.text-center
-    - @posts.each_slice(3) do |slice|
+    - @featured_posts.each_slice(3) do |slice|
       %br
       - slice.each do |post|
         = link_to post.title, post
