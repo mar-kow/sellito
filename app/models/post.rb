@@ -1,5 +1,7 @@
 class Post < ApplicationRecord
-  # TODO: handle uploading photos
+  # TODO: handle uploading photo
+  # lambda / ->
+  scope :featured_posts, -> { includes(:categories).order('created_at DESC').limit(12) }
   belongs_to :user
   has_many :post_categories
   has_many :categories, through: :post_categories
