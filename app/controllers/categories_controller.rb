@@ -8,23 +8,29 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    authorize @category
   end
 
   def create
     @category = Category.new(category_params)
     @category.valid? ? create_category : handle_category_validation_failed
+    authorize @category
   end
 
   def show;  end
 
-  def edit;  end
+  def edit
+    authorize @category
+  end
 
   def update
+    authorize @category
     @category.update_attributes(category_params)
     redirect_to @category
   end
 
   def destroy
+    authorize @category
     @category.destroy
     flash[:notice] = "Category #{category.name} deleted"
     redirect_to categories_path
