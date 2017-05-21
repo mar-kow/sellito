@@ -1,4 +1,4 @@
-= button_to "Add post", new_post_path, method: :get, class: 'btn btn-xs pull-right'
+= button_to "Add post", new_post_path, method: :get if current_user
 
 %h4 Posts
 
